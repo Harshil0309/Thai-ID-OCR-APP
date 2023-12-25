@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Thai-ID-OCR-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed on the following link
+https://thai-id-ocr-app-e94511a97bb8.herokuapp.com/
 
-## Available Scripts
 
-In the project directory, you can run:
+The Thai ID OCR App is a powerful and user-friendly application designed to extract information from Thai National ID cards swiftly and accurately. Leveraging advanced Optical Character Recognition (OCR) technology, this app simplifies the process of capturing and interpreting data from Thai identification cards, providing a seamless experience for users.
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Folder Structure](#folder-structure)
+- [Dependencies](#dependencies)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+These instructions will help you set up and run the project on your local machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Make sure you have the following software installed on your machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/) (version >= 12)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+   ```bash
+   git clone https://github.com/<your-username>/<your-project-name>.git
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ## Navigate to the project directory
+   cd <your-project-name>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Navigate to the server directory and install server dependencies
+cd server
+npm install
 
-## Learn More
+## Navigate to the client directory and install client dependencies
+cd ../client
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Replace <your-username> and <your-project-name> with your actual GitHub username and project name.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Make sure you have Git installed on your machine for the git clone command to work, and Node.js with npm for the npm install commands to work.
 
-### Code Splitting
+# Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## body-parser:
+body-parser is a middleware for Express.js that parses incoming request bodies. It extracts data from the request's body and makes it available in the req.body object. This is crucial for handling HTTP POST requests and simplifying the extraction of form data or JSON payloads in your Express application.
 
-### Analyzing the Bundle Size
+## mongoose:
+mongoose is an elegant MongoDB object modeling tool designed for Node.js. It provides a straightforward, schema-based solution to model your application data. With mongoose, you can define data models, create relationships, and interact with MongoDB in a more structured manner. It simplifies tasks such as validation, querying, and updating documents in MongoDB.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## MongoDB:
+MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It is schema-less, allowing you to store and retrieve data in a more dynamic and scalable way compared to traditional relational databases. In a MERN stack, MongoDB serves as the backend database, storing and retrieving data for your Node.js and Express.js server.
 
-### Making a Progressive Web App
+## express:
+express is a fast, unopinionated, minimalist web framework for Node.js. It simplifies the process of building robust web applications by providing a set of features for web and mobile applications. With express, you can define routes, handle HTTP requests and responses, and structure your application in a modular way.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## react:
+react is a JavaScript library for building user interfaces. In a MERN stack, React is used for the frontend, allowing you to create interactive and dynamic user interfaces. With React, you can build reusable UI components, manage application state efficiently, and enhance the overall user experience.
