@@ -1,0 +1,75 @@
+/* Form.css */
+
+.main {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .file-input {
+    margin-bottom: 10px;
+    
+  }
+  
+  .submit-btn {
+    margin-left: 20px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .result-box {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .result-box h2 {
+    margin-bottom: 10px;
+  }
+  
+  .blankarea {
+    white-space: pre-wrap;
+  }
+  
+  .all-button {
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .add-to-db{
+    margin-top: 20px;
+    background-color: #2196f3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .entry-list {
+    margin-left: 10px;
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .entry-list:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Add more styles as needed */
+  
