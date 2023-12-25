@@ -1,5 +1,8 @@
 # Thai-ID-OCR-App
 
+## Deployed on the following link
+https://thai-id-ocr-app-e94511a97bb8.herokuapp.com/
+
 
 The Thai ID OCR App is a powerful and user-friendly application designed to extract information from Thai National ID cards swiftly and accurately. Leveraging advanced Optical Character Recognition (OCR) technology, this app simplifies the process of capturing and interpreting data from Thai identification cards, providing a seamless experience for users.
 
