@@ -119,8 +119,14 @@ app.get("/allid", async (req, res) => {
       return res.status(500).json({ message: "Internal Server Error", error });
     }
   });
-
+    console.log(process.env.NODE_ENV)
+  if (process.env.NODE_ENV === "production") {
+    app.use("/", express.static("/build"));
   
+    app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, "build/index.html"));
+    });
+  }
 
 // Start the server
 app.listen(port, () => {

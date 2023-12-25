@@ -29,7 +29,14 @@ const Form = () => {
       formData.append("image", selectedFile);
 
       try {
-        const response = await fetch("http://localhost:3001/upload", {
+        console.log(process.env.NODE_ENV);
+        const apiUrl =
+          process.env.NODE_ENV === "production"
+            ? process.env.REACT_APP_API_URL_PROD_upload
+            : process.env.REACT_APP_API_URL_upload;
+            console.log(process.env)
+        console.log(apiUrl);
+        const response = await fetch(apiUrl, {
           method: "POST",
           body: formData,
         });
@@ -98,34 +105,40 @@ const Form = () => {
       } catch (error) {
         console.error("Error:", error);
       }
-    }else{
-      alert("Please Select a file first")
+    } else {
+      alert("Please Select a file first");
       console.log("no file selected");
     }
   };
 
   const handleAdd = async () => {
-      fetch("http://localhost:3001/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(result),
-      })
-      .then(() => {
-        alert("Added");
-        handleAllId();
-      })
+    const apiUrl =
+      process.env.NODE_ENV === "production"
+        ? process.env.REACT_APP_API_URL_PROD_add
+        : process.env.REACT_APP_API_URL_add;
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(result),
+    }).then(() => {
+      alert("Added");
+      handleAllId();
+    });
 
-     
-      // alert("Succesfully Added");
-      // const result2 = await response.json();
-    
+    // alert("Succesfully Added");
+    // const result2 = await response.json();
+
     // handleAllId();
   };
 
   const handleAllId = async () => {
-    fetch("http://localhost:3001/allid")
+    const apiUrl =
+      process.env.NODE_ENV === "production"
+        ? process.env.REACT_APP_API_URL_PROD_allid
+        : process.env.REACT_APP_API_URL_allid;
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => setEntries(data))
       .catch((error) => console.error("Error fetching entries:", error));
@@ -133,8 +146,12 @@ const Form = () => {
 
   const handleDeleteEntry = async (entryId) => {
     // Delete entry with the given ID
-    console.log("api start");
-    fetch(`http://localhost:3001/delete/${entryId}`, {
+    // console.log("api start");
+    const apiUrl =
+      process.env.NODE_ENV === "production"
+        ? process.env.REACT_APP_API_URL_PROD_delete
+        : process.env.REACT_APP_API_URL_delete;
+    fetch(`${apiUrl}${entryId}`, {
       method: "DELETE",
     })
       .then((response) => response.json())
@@ -142,16 +159,18 @@ const Form = () => {
         // console.log(data.message);
         // Fetch updated entries after deletion
         handleAllId();
-        alert("Entry Deleted")
+        alert("Entry Deleted");
       })
       .catch((error) => console.error("Error deleting entry:", error));
   };
 
   return (
     <div className="main">
-      <Navbar/>
+      <Navbar />
       <input className="file-input" type="file" onChange={handleFileChange} />
-      <button className="submit-btn" onClick={handleUpload}>Upload and Analyze</button>
+      <button className="submit-btn" onClick={handleUpload}>
+        Upload and Analyze
+      </button>
       {result && (
         <div className="result-box">
           <h2>Analysis Result:</h2>
@@ -159,14 +178,21 @@ const Form = () => {
         </div>
       )}
 
-      {result && <button className="add-to-db" onClick={handleAdd}>ADD to DB</button>}
-      <button className="all-button" onClick={handleAllId}>Check All Ids</button>
+      {result && (
+        <button className="add-to-db" onClick={handleAdd}>
+          ADD to DB
+        </button>
+      )}
+      <button className="all-button" onClick={handleAllId}>
+        Check All Ids
+      </button>
 
       <ul>
         {entries.map((entry) => (
           <li key={entry.identification_number}>
             {entry.identification_number} - {entry.name} {entry.last_name}
-            <button className="entry-list"
+            <button
+              className="entry-list"
               onClick={() => handleDeleteEntry(entry.identification_number)}
             >
               Delete
